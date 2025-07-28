@@ -8,7 +8,7 @@ Features:
 // Supports decimal numbers
 // Built-in error detection
 
-This project uses Code::Blocks with wxWidgets. If you want to build the project yourself, make sure wxWidgets is properly configur on your system.
+This project uses Code::Blocks with wxWidgets. If you want to build the project yourself, make sure wxWidgets is properly configure on your system.
 
 
 
