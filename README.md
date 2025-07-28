@@ -11,4 +11,8 @@ Features:
 This project uses Code::Blocks with wxWidgets. If you want to build the project yourself, make sure wxWidgets is properly configure on your system.
 
 
+/**    There are some major bugs so don't compile it now. 
+       1. It doesn't parse negetive numbers.
+       2. It doesn't work with expressions like this :    (-(-2 + 3))
+**/
 
