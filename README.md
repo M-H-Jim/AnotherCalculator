@@ -4,7 +4,7 @@ This is just a personal project. A simple calculator.
 
 Features:
 
-// Basic arithmetic with parenthese support for order of operations
+// Basic arithmetic with parentheses support for order of operations
 // Supports decimal numbers
 // Built-in error detection
 
