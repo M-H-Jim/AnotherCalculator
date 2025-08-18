@@ -25,6 +25,7 @@ POSTFIX_AND_CHECK postfix(string express) {
 	vector<char> num;
 
 	short check1 = 0, check2 = 10, countB = 0;
+	bool checkForFirstMinus = 1;
 
 	char characters [19] = "0123456789 +-*/(.)";
 
@@ -43,9 +44,18 @@ POSTFIX_AND_CHECK postfix(string express) {
 		else if(isdigit(expression[i]) || expression[i] == '.') {
 
 			num.push_back(expression[i]);
+			checkForFirstMinus = 0;
 
 		}     // push integers...
 		else {
+
+			if(checkForFirstMinus && expression[i] == '-') {
+                num.push_back('0');
+                checkForFirstMinus = 0;
+			}   // This is to fix expression like:  -2 + 3
+            else if(expression[i] == '-' && expression[i - 1] == '(') {
+                num.push_back('0');
+            }   // This is to fix expression like:   (-2 * 5)
 
 			if(!num.empty()) {
 				string str(num.begin(), num.end());
@@ -54,6 +64,10 @@ POSTFIX_AND_CHECK postfix(string express) {
 			}
 
 			if(expression[i] == '(') {
+				if(i > 0 && ((expression[i - 1] == ')') || (isdigit(expression[i - 1])))) {
+                    operators.push('*');
+				}   // This is to fix expression like:  (3)(4), 3(4)
+
 				operators.push(expression[i]);
 				countB++;
 			}
@@ -69,6 +83,9 @@ POSTFIX_AND_CHECK postfix(string express) {
 					operators.pop();
 				}
 				operators.pop(); countB--;
+				if(isdigit(expression[i + 1])) {
+                    operators.push('*');
+				}   // This is to fix expression like:  (4)6
 			}
 
 			else {
