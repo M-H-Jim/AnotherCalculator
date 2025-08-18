@@ -2,6 +2,11 @@
 
 This is just a personal project. A simple calculator.
 
+Built with: ----C++ ----wxWidgets
+
+Development tools: ----Code::Blocks IDE ----GNU GCC Compiler
+
+
 Features:
 
 // Basic arithmetic with parentheses support for order of operations
@@ -10,9 +15,9 @@ Features:
 
 This project uses Code::Blocks with wxWidgets. If you want to build the project yourself, make sure wxWidgets is properly configure on your system.
 
+How to Run:
 
-/**    There are some major bugs so don't compile it now. 
-       1. It doesn't parse negetive numbers.
-       2. It doesn't work with expressions like this :    (-(-2 + 3))
-**/
+    Download the latest release zip file from the Releases section.
+    Extract the zip file.
+    Run the Another Calculator.exe file ( for Windows :) ).
 
